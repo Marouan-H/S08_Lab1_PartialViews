@@ -1,0 +1,30 @@
+﻿@model IEnumerable<HuntingLog>
+
+@{
+    ViewData["Title"] = "Hunting Log";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col text-right">
+            <a asp-action="Create" class="btn btn-success">
+                Create 
+            </a>
+        </div>
+        <div class="col text-right">
+            <a asp-action="Edit" class="btn btn-success">
+                Edit
+            </a>
+        </div>
+        <div class="col text-right">
+            <a asp-action="Details" class="btn btn-success">
+                Details
+            </a>
+        </div>
+        <div class="col text-right">
+            <a asp-action="Delete" class="btn btn-success">
+                Delete
+            </a>
+        </div>
+    </div>
+</div>

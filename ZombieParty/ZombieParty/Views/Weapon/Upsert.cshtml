@@ -1,10 +1,18 @@
 ﻿@model ZombieParty.Models.Weapon
 
-@{
+@if (Model.WeaponId != 0)
+{
+    ViewData["Title"] = "Edit";
+}
+else
+{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+
+<h1> @ViewData["Title"] </h1>
+
+
 
 <h4>Weapon</h4>
 <hr />
@@ -53,15 +61,15 @@
                 <span asp-validation-for="QtyBought" class="text-danger"></span>
             </div>
             <div class="form-group mt-2 mb-2">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <partial name="_UpsertButtons" model="@Model.WeaponId" />
             </div>
+
+            <input asp-for="WeaponId" class="form-control" hidden />
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
